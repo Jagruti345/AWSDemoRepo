@@ -21,10 +21,7 @@ for file in os.listdir(folder):
     s3.upload_file(
         path,
         bucket,
-        f"images/{file}",
-        ExtraArgs={
-            "ACL":"public-read"
-        }
+        f"images/{file}"
     )
 
-print("Images Uploaded Successfully")
+print("✅ Images Uploaded Successfully")
