@@ -1,8 +1,11 @@
 name: Deploy Website
 
 on:
+
   push:
+
     branches:
+
       - main
 
 jobs:
@@ -13,18 +16,42 @@ jobs:
 
     steps:
 
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
+
         with:
+
           python-version: "3.11"
 
-      - name: Install Dependencies
-        run: |
+      - run: |
+
           pip install -r requirements.txt
 
-      - name: Run Deployment Script
+      - name: Upload Images to S3
+
+        env:
+
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+          BUCKET_NAME: ${{ secrets.BUCKET_NAME }}
+
         run: |
+
+          python upload_images.py
+
+      - name: Deploy Website
+
+        env:
+
+          EC2_HOST: ${{ secrets.EC2_HOST }}
+
+          EC2_USERNAME: ${{ secrets.EC2_USERNAME }}
+
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+
+        run: |
+
           python deploy.py

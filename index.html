@@ -1,24 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWS GitHub Deployment</title>
+    <title>AWS CI/CD Deployment Demo</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="container">
-    <h1>🚀 AWS GitHub Deployment Demo</h1>
+    <div class="container">
 
-    <p>This website is hosted on an Ubuntu EC2 instance using Nginx.</p>
+        <h1>🚀 AWS CI/CD Deployment Demo</h1>
 
-    <button onclick="showMessage()">Click Me</button>
+        <h3>GitHub → GitHub Actions → Ubuntu EC2 → Nginx</h3>
 
-    <h2 id="message"></h2>
-</div>
+        <p>
+            This website is automatically deployed whenever code is pushed to
+            the GitHub repository.
+        </p>
 
-<script src="script.js"></script>
+        <button onclick="showMessage()">
+            Check Deployment
+        </button>
+
+        <h2 id="message"></h2>
+
+        <div class="card">
+
+            <h2>Deployment Details</h2>
+
+            <table>
+
+                <tr>
+                    <td><strong>Repository</strong></td>
+                    <td>AWSDemoRepo</td>
+                </tr>
+
+                <tr>
+                    <td><strong>Server</strong></td>
+                    <td>Ubuntu EC2</td>
+                </tr>
+
+                <tr>
+                    <td><strong>Web Server</strong></td>
+                    <td>Nginx</td>
+                </tr>
+
+                <tr>
+                    <td><strong>Automation</strong></td>
+                    <td>GitHub Actions</td>
+                </tr>
+
+                <tr>
+                    <td><strong>Deployment Tool</strong></td>
+                    <td>Python + Paramiko</td>
+                </tr>
+
+                <tr>
+                    <td><strong>Image Storage</strong></td>
+                    <td>Amazon S3</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="workflow">
+
+            <h2>CI/CD Workflow</h2>
+
+            <p>
+                👨‍💻 Developer
+                ➜ Git Push
+                ➜ GitHub Actions
+                ➜ Paramiko SSH
+                ➜ Ubuntu EC2
+                ➜ Git Pull
+                ➜ Reload Nginx
+                ➜ Website Updated
+            </p>
+
+        </div>
+
+        <footer>
+
+            <p>
+                ✅ Version 2.0 |
+                Last Updated: July 2026
+            </p>
+
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
 
 </body>
-</html>
+
+</html>+
