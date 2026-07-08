@@ -6,6 +6,9 @@ HOST = os.environ["EC2_HOST"]
 USERNAME = os.environ["EC2_USERNAME"]
 PRIVATE_KEY = os.environ["PRIVATE_KEY"]
 
+print(f"HOST = {HOST}")
+print(f"USERNAME = {USERNAME}")
+
 with tempfile.NamedTemporaryFile(delete=False, mode="w") as key_file:
     key_file.write(PRIVATE_KEY)
     key_path = key_file.name
