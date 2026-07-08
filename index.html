@@ -3,20 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWS GitHub Deployment</title>
+    <title>AWS GitHub Deployment - Version 2.0</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
+
     <h1>🚀 AWS GitHub Deployment Demo</h1>
 
-    <p>This website is hosted on an Ubuntu EC2 instance using Nginx.</p>
+    <h2 style="color:green;">
+        ✅ Website Successfully Updated!
+    </h2>
 
-    <button onclick="showMessage()">Click Me</button>
+    <p>
+        This website is hosted on an <strong>Ubuntu EC2</strong> instance using
+        <strong>Nginx</strong>.
+    </p>
+
+    <p>
+        Every change pushed to the <strong>GitHub repository</strong>
+        automatically deploys to this server using
+        <strong>GitHub Actions + Paramiko</strong>.
+    </p>
+
+    <button onclick="showMessage()">Check Deployment</button>
 
     <h2 id="message"></h2>
-    <h2 id="message"></h2>
+
+    <hr>
+
+    <h3>Deployment Information</h3>
+
+    <p><strong>Version:</strong> 2.0</p>
+    <p><strong>Status:</strong> 🟢 Live</p>
+    <p><strong>Server:</strong> Ubuntu EC2</p>
+    <p><strong>Web Server:</strong> Nginx</p>
+    <p><strong>CI/CD:</strong> GitHub Actions + Paramiko</p>
+
+    <p style="margin-top:20px;color:#0077cc;">
+        🔄 Updated on: 08 July 2026
+    </p>
+
 </div>
 
 <script src="script.js"></script>
