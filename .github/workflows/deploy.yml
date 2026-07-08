@@ -6,13 +6,10 @@ on:
       - main
 
 jobs:
-
   deploy:
-
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -26,5 +23,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Deployment Script
+        env:
+          EC2_HOST: ${{ secrets.EC2_HOST }}
+          EC2_USERNAME: ${{ secrets.EC2_USERNAME }}
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
         run: |
           python deploy.py
